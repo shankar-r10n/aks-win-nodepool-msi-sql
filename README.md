@@ -15,7 +15,7 @@ And it should also ensure that the  same app **cannot connect** to another DB (s
 - AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup cluster has been tested with Kubernetes v 1.17.11
 - A Windows node pool in the AKS cluster.
 - Container registry (like Azure Container Registry for storing / managing the sample app image.)
-- 2 Azure SQL DBs (*say [AlphaDB] and [GammaDB] *) in an Azure SQL server.
+- 2 Azure SQL DBs (say *[AlphaDB] and [GammaDB]*) in an Azure SQL server.
 
 
 ## Setup Instructions
