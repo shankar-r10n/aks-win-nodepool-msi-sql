@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPTester", "NPTester.csproj", "{337F44E5-43A2-49DA-9397-8004A6B01C56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{337F44E5-43A2-49DA-9397-8004A6B01C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337F44E5-43A2-49DA-9397-8004A6B01C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337F44E5-43A2-49DA-9397-8004A6B01C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337F44E5-43A2-49DA-9397-8004A6B01C56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {401F0ACE-8123-491C-A052-CEB309E82946}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Results";
+}
+@{
+    var data = ViewBag.Message;
+}
+<div class="jumbotron">
+    <h1>Database Connection Tester </h1>
+    <p class="lead">Trying to Connect to Database 1  - @data.DBName</p>
+    <p class="lead">Connection Result - @data.DBConnectionResult</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="lead">Trying to Connect to Database2  - @data.DBName2</p>
+    <p class="lead">Connection Result - @data.DBConnectionResult2</p>
+    <br />
+    <br />
+    <br />
+    <br />
+    <p class="lead"> @data.DebugBuffer</p>
+
+
+</div>
+

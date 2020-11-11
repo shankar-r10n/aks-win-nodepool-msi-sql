@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wnp-tester
+  labels:
+    app: wnp-tester
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: wnp-tester
+      labels:
+        app: wnp-tester
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": windows
+      containers:
+      - name: wnp-tester
+        image: <<yourregistry>>/nptester:latest
+        resources:
+          limits:
+            cpu: 1
+            memory: 800M
+          requests:
+            cpu: 1
+            memory: 300M
+        ports:
+          - containerPort: 80
+  selector:
+    matchLabels:
+      app: wnp-tester
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wnp-testersvc
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80
+  selector:
+    app: wnp-tester
