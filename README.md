@@ -12,7 +12,7 @@ And it should also ensure that the  same app **cannot connect** to another DB (s
 
 
 ## :memo: Prerequisites
-- AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.)
+- AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup cluster has been tested with Kubernetes v 1.17.11
 - A Windows node pool in the AKS cluster.
 - Container registry (like Azure Container Registry for storing / managing the sample app image.)
 - 2 Azure SQL DBs (*say [AlphaDB] and [GammaDB] *) in an Azure SQL server.
@@ -35,7 +35,7 @@ az vmss identity assign -g <RESOURCE GROUP>
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ```
 
-4.	Provide the needed - `serverName`, `databaseName`, `clientId` , `aadTenantId` and connection string details in the requiste sections of the sample  .NET  application.
+4.	In the sample app - NPTester - for the Provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
 5.	Build/push to container registry and deploy the app to the AKS Cluster.
 > A sample yaml file - winnp.yaml - is provided in the repo.
 6.	Verify that connection to Alpha DB is successful.
