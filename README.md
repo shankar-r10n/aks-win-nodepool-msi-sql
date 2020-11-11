@@ -9,7 +9,7 @@ The assignment of a user-assigned managed idenity (uMI) to a Windows Node pool a
 And it should also ensure that the  same app **cannot connect** to another DB (say Gamma DB) in the same Azure SQL Logical server which **does not** have the DB user created for the uMI.
 
 ## Logical Diagram
-
+![](https://github.com/shankar-r10n/aks-win-nodepool-msi-sql/blob/main/img/LogicalView.PNG)
 
 ## :memo: Prerequisites
 - AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup cluster has been tested with Kubernetes v 1.17.11
@@ -45,3 +45,5 @@ CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ## Result
 
 The app  should reflect similar to following image - depicting ability to connect to Alpha DB. And unsuccessful connnection to GammaDB.
+![](https://github.com/shankar-r10n/aks-win-nodepool-msi-sql/blob/main/img/AppResultScreenshot.PNG)
+
