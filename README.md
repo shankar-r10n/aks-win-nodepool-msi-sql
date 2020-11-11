@@ -35,7 +35,7 @@ az vmss identity assign -g <RESOURCE GROUP>
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ```
 
-4.	In the sample app - NPTester - for the Provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
+4.	In the sample app - NPTester - `HomeController.cs` file provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
 5.	Build/push to container registry and deploy the app to the AKS Cluster.
 > A sample yaml file - winnp.yaml - is provided in the repo for deploying the app and creating a backing service.
 6.	Launch the app and verify that connection to Alpha DB is successful.
