@@ -1,4 +1,4 @@
-# :rocket: .NET 4.7 ASP.Net MVC App on AKS Windows Node Pool + Azure SQL DB + User-assigned managed identity  
+# .NET 4.7 ASP.Net MVC App on AKS Windows Node Pool + Azure SQL DB + User-assigned managed identity  
 
 This repo provides the prerequisites, setup instructions and a sample .NET 4.7.2 ASP.NET MVC App for testing Azure SQL DB connectivity utilizing User-Assigned Managed Identities.
 
@@ -6,7 +6,7 @@ This repo provides the prerequisites, setup instructions and a sample .NET 4.7.2
 
 The assignment of a user-assigned managed idenity (uMI) to a Windows Node pool and creating a DB user for the uMI in a Azure SQL DB (say AlphaDB) - should ensure that an app hosted on the Windows node pool **can connect** to the Alpha DB. 
 
-And it should also ensure that the  same app **cannot connect** to another DB (say GammDB) in the same Azure SQL Logical server which **does not** have the DB user created for the uMI.
+And it should also ensure that the  same app **cannot connect** to another DB (say Gamma DB) in the same Azure SQL Logical server which **does not** have the DB user created for the uMI.
 
 ## Logical Diagram
 
@@ -35,10 +35,10 @@ az vmss identity assign -g <RESOURCE GROUP>
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ```
 
-4.	In the sample app - NPTester - for the Provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
+4.	In the sample app - NPTester - `HomeController.cs` file provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
 5.	Build/push to container registry and deploy the app to the AKS Cluster.
-> A sample yaml file - winnp.yaml - is provided in the repo.
-6.	Verify that connection to Alpha DB is successful.
+> A sample yaml file - winnp.yaml - is provided in the repo for deploying the app and creating a backing service.
+6.	Launch the app and verify that connection to Alpha DB is successful.
 7.	Verify that connection to Gamma DB is NOT successful.
 
 
