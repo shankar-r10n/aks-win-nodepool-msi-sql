@@ -1,6 +1,6 @@
 # .NET 4.7 ASP.Net MVC App on AKS Windows Node Pool + Azure SQL DB + User-assigned managed identity  
 
-This repo provides the prerequisites, setup instructions and a sample .NET 4.7.2 ASP.NET MVC App for testing Azure SQL DB connectivity utilizing User-Assigned Managed Identities.
+This repo provides the prerequisites, setup instructions and a sample .NET 4.7.2 ASP.NET MVC App for testing Azure SQL DB connectivity utilizing User-Assigned Managed Identities on AKS cluster with a Windows node pool.
 
 ## Premise
 
