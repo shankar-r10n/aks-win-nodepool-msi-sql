@@ -4,7 +4,7 @@ This repo provides the prerequisites, setup instructions and a sample .NET 4.7.2
 
 ## Premise
 
-The assignment of a user-assigned managed idenity (uMI) to a Windows Node pool and creating a DB user for the uMI in a Azure SQL DB (say AlphaDB) - should ensure that an app hosted on the Windows node pool **can connect** to the Alpha DB. 
+The assignment of a user-assigned managed identity (uMI) to a Windows Node pool and creating a DB user for the uMI in a Azure SQL DB (say AlphaDB) - should ensure that an app hosted on the Windows node pool **can connect** to the Alpha DB. 
 
 And it should also ensure that the  same app **cannot connect** to another DB (say Gamma DB) in the same Azure SQL Logical server which **does not** have the DB user created for the uMI.
 
