@@ -16,16 +16,23 @@ spec:
         "beta.kubernetes.io/os": windows
       containers:
       - name: wnp-tester
-        image: <<yourregistry>>/nptester:latest
+        image: wnpacr.azurecr.io/nptester:latest
         resources:
           limits:
             cpu: 1
-            memory: 800M
+            memory: 1Gi
           requests:
             cpu: 1
-            memory: 300M
+            memory: 1Gi
         ports:
           - containerPort: 80
+        env:
+        - name: "AuthConnectionString"
+          value: "RunAs=App; AppId=6bdea34d-2d5b-4188-a9b2-ef59e77c5135"
+        - name: "DbConnection"
+          value: "Server=winnptestdb.database.windows.net,1433;Database=AlphaDB;UID=a;Authentication=Active Directory Interactive"
+        - name: "DbConnection2"
+          value: "Server=winnptestdb.database.windows.net,1433;Database=GammaDB;UID=b;Authentication=Active Directory Interactive"
   selector:
     matchLabels:
       app: wnp-tester
