@@ -36,7 +36,7 @@ az vmss identity assign -g <RESOURCE GROUP>
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ```
 
-4.	In the sample app - NPTester - `HomeController.cs` reads the env vars for connection strings as set during deployment; see sample winnp.yaml as follows.
+4.	The sample app - NPTester - `HomeController.cs` reads the env vars for connection strings as set during deployment. No changes needed in the app; see sample winnp.yaml as follows.
 5.	Build/push to container registry and deploy the app to the AKS Cluster.
 > A sample yaml file - winnp.yaml - is provided in the repo for deploying the app and creating a backing service. This also sets the needed environment variables where you can provide the DB connection strings valuses and the AppId value which is the clientId of the newly created managed identity.
 6.	Launch the app and verify that connection to Alpha DB is successful.
