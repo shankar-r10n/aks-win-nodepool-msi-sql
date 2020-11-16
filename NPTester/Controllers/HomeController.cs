@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,10 +19,10 @@ namespace NPTester.Controllers
             #region DB Connect experiment right here
            
 
-            string databaseName = "<your DB1 name>"; // Your DB 1 name referred to as Alpha DB in instructions
-            string clientId = "6bdea34d-2d5b-4188-a9b2-ef59e77c5135"; // User Assigned MSI - ClientId
+            string databaseName = "AlphaDB (with uMI) "; // Your DB 1 name referred to as Alpha DB in instructions
+            //string clientId = "6bdea34d-2d5b-4188-a9b2-ef59e77c5135"; // User Assigned MSI - ClientId
 
-            string databaseName2 = "<your DB2 name>"; //DB2 name reffered to as Gamma DB in instructiosn
+            string databaseName2 = "GammaDB (no uMI)"; //DB2 name reffered to as Gamma DB in instructiosn
 
             string AadInstance = "https://login.windows.net/{0}";
             string ResourceId = "https://database.windows.net/";
@@ -30,14 +30,16 @@ namespace NPTester.Controllers
             string connectionResult2 = "Unable to Connect to Database.";
             string debugBuffer = "";
 
-            //Connection string for DB1/Alpha DB per instructions. Populate your DB server name and DB Name accordingly in the string.
-            string sqlConnectionString = "Server=<yourDBServerName>.database.windows.net,1433;Database=<DB1Name>;UID=a;Authentication=Active Directory Interactive";
+            ////Connection string for DB1/Alpha DB per instructions. Populate your DB server name and DB Name accordingly in the string.
+            //string sqlConnectionString = "Server=winnptestdb.database.windows.net,1433;Database=AlphaDB;UID=a;Authentication=Active Directory Interactive";
 
-            //Connection string for DB2/Gamma DB per instructions. Populate your DB server name and DB Name accordingly in the string.
-            string sqlConnectionString2 = "Server=winnptestdb.database.windows.net,1433;Database=GammaDB;UID=a;Authentication=Active Directory Interactive";
+            ////Connection string for DB2/Gamma DB per instructions. Populate your DB server name and DB Name accordingly in the string.
+            //string sqlConnectionString2 = "Server=winnptestdb.database.windows.net,1433;Database=GammaDB;UID=a;Authentication=Active Directory Interactive";
 
-            Environment.SetEnvironmentVariable("AzureServicesAuthConnectionString", $"RunAs=App; AppId={clientId}");
+            //Environment.SetEnvironmentVariable("AzureServicesAuthConnectionString", $"RunAs=App; AppId={clientId}");
 
+            string sqlConnectionString = Environment.GetEnvironmentVariable("DbConnection");
+            string sqlConnectionString2 = Environment.GetEnvironmentVariable("DbConnection2");
 
             using (var conn = new SqlConnection(sqlConnectionString))
             {
