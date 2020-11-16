@@ -12,7 +12,7 @@ And it should also ensure that the  same app **cannot connect** to another DB (s
 ![](https://github.com/shankar-r10n/aks-win-nodepool-msi-sql/blob/main/img/LogicalView.PNG)
 
 ## :memo: Prerequisites
-- AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup cluster has been tested with Kubernetes v 1.17.11
+- AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup cluster has been tested with Kubernetes v 1.17.11 and v 1.18.10
 - A Windows node pool in the AKS cluster.
 - Container registry (like Azure Container Registry for storing / managing the sample app image.)
 - 2 Azure SQL DBs (say *[AlphaDB] and [GammaDB]*) in an Azure SQL server.
@@ -35,9 +35,9 @@ az vmss identity assign -g <RESOURCE GROUP>
 CREATE USER [<identity-name>] FROM EXTERNAL PROVIDER
 ```
 
-4.	In the sample app - NPTester - `HomeController.cs` file provide the needed - `serverName`, `databaseName`, `clientId`  and connection string details in the requiste sections of the sample  .NET  application.
+4.	In the sample app - NPTester - `HomeController.cs` reads the env vars for connection strings as set during deployment; see sample winnp.yaml as follows.
 5.	Build/push to container registry and deploy the app to the AKS Cluster.
-> A sample yaml file - winnp.yaml - is provided in the repo for deploying the app and creating a backing service.
+> A sample yaml file - winnp.yaml - is provided in the repo for deploying the app and creating a backing service. This also sets the needed environment variables where you can provide the DB connection strings valuses and the AppId value which is the clientId of the newly created managed identity.
 6.	Launch the app and verify that connection to Alpha DB is successful.
 7.	Verify that connection to Gamma DB is NOT successful.
 
