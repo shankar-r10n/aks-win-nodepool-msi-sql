@@ -14,7 +14,7 @@ And it should also ensure that the  same app **cannot connect** to another DB (s
 ## :memo: Prerequisites
 - AKS Cluster for Windows Nodes (running an actively supported Kubernetes version.) This setup  has been tested with AKS Clusters with Kubernetes v 1.17.11 and v 1.18.10
 - A Windows node pool in the AKS cluster.
->Note - This setup uses just one Windows node pool, if you have multipple Windows node pool utilize taints/tolerations for deploying the sample app.
+>Note - This setup uses just one Windows node pool, if you have multiple Windows node pool utilize taints/tolerations for deploying the sample app.
 - Container registry (like Azure Container Registry for storing / managing the sample app image.)
 - 2 Azure SQL DBs (say *[AlphaDB] and [GammaDB]*) in an Azure SQL server.
 
